@@ -172,11 +172,12 @@ submitted cases as its denominator.
 
 The default roster contains 25 endpoint configurations.
 
-Context.dev (`context`) uses the unchanged question and up to 10 standard search
-results, with `highlightsOptions.enabled=false`. Snippets use result descriptions.
+Context.dev (`context`) uses the unchanged question and up to 10 search results,
+with `highlightsOptions={"enabled":true,"maxCharacters":4000}`. Snippets use
+successful Highlights, falling back to descriptions when Highlights are unavailable.
 Set `CONTEXT_API_KEY` and select `--endpoints context`. Results are pending.
-Pricing uses the Developer top-up rate of $2.20 per 1,000 credits and one credit
-per 10 results ($0.0022/query), verified 2026-10-20; the subscription is excluded.
+Pricing uses the Developer top-up rate of $2.20 per 1,000 credits and two credits
+per 10 results with Highlights ($0.0044/query), verified 2026-10-20; the subscription is excluded.
 
 **Web search:** Parallel turbo, fast, and basic; Exa instant and fast; Brave Web
 Search and LLM Context; You highlights with and without `knowledge=core`; Perplexity low context;
