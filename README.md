@@ -173,7 +173,7 @@ submitted cases as its denominator.
 The default roster contains 25 endpoint configurations.
 
 Context.dev (`context`) uses the unchanged question and up to 10 search results,
-with `highlightsOptions={"enabled":true,"maxCharacters":4000}`. Snippets use
+with `highlightsOptions={"enabled":true,"maxCharacters":8000}`. Snippets use
 successful Highlights, falling back to descriptions when Highlights are unavailable.
 Set `CONTEXT_API_KEY` and select `--endpoints context`. Results are pending.
 Pricing uses the Developer top-up rate of $2.20 per 1,000 credits and two credits
