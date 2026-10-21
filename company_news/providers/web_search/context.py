@@ -12,10 +12,7 @@ from .common import WebAdapter
 def _parse(payload: Any) -> list[Hit]:
     output: list[Hit] = []
     for row in payload.get("results") or []:
-        highlights = row.get("highlights") or {}
-        parts = highlights.get("highlights") if highlights.get("code") == "SUCCESS" else []
-        snippet = "\n".join(part for part in parts or [] if isinstance(part, str))
-        item = hit(row.get("url"), row.get("title"), snippet or row.get("description"))
+        item = hit(row.get("url"), row.get("title"), row.get("description"))
         if item:
             output.append(item)
     return output
@@ -25,7 +22,7 @@ def _build(case: Case):
     return (
         "POST", "https://api.context.dev/v1/web/search",
         {"Authorization": f"Bearer {os.environ['CONTEXT_API_KEY']}", "Content-Type": "application/json"},
-        {"query": case.question, "numResults": 10, "highlightsOptions": {"enabled": True}},
+        {"query": case.question, "numResults": 10, "highlightsOptions": {"enabled": False}},
         None, 90,
     )
 
