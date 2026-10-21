@@ -170,7 +170,15 @@ submitted cases as its denominator.
 
 ## Published endpoint roster
 
-The default roster contains 24 endpoint configurations.
+The default roster contains 25 endpoint configurations.
+
+Context.dev (`context`) uses web search with query-relevant Highlights, up to
+10 results, and the unchanged question. Set `CONTEXT_API_KEY` and select
+`--endpoints context`. Results are pending. Pricing uses the Developer top-up
+rate of $2.20 per 1,000 credits and the 2 credits reported by live 10-result
+Highlights requests on 2026-10-20 ($0.0044/query); the plan subscription is
+excluded. The pricing page says search starts at 1 credit; recheck billed usage
+before a scored run.
 
 **Web search:** Parallel turbo, fast, and basic; Exa instant and fast; Brave Web
 Search and LLM Context; You highlights with and without `knowledge=core`; Perplexity low context;
@@ -184,6 +192,7 @@ Stable endpoint IDs, as accepted by `--endpoints`:
 
 ```text
 parallel_turbo parallel_fast parallel_basic exa_instant exa_fast
+context
 nimble_lite nimble_lite_news nimble_standard
 brave brave_llm you_highlights you_highlights_core perplexity_low tinyfish firecrawl
 tavily_basic tavily_advanced serp linkup_fast linkup_standard

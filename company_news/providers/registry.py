@@ -6,6 +6,7 @@ from .news_indexes.datahyena import ADAPTERS as DATAHYENA
 from .news_indexes.predictleads import ADAPTERS as PREDICTLEADS
 from .news_indexes.seltz import ADAPTERS as SELTZ
 from .web_search.brave import ADAPTERS as BRAVE
+from .web_search.context import ADAPTERS as CONTEXT
 from .web_search.exa import ADAPTERS as EXA
 from .web_search.firecrawl import ADAPTERS as FIRECRAWL
 from .web_search.linkup import ADAPTERS as LINKUP
@@ -18,6 +19,7 @@ from .web_search.nimble import ADAPTERS as NIMBLE
 from .web_search.you import ADAPTERS as YOU
 
 DEFAULT_ENDPOINTS = (
+    "context",
     "nimble_lite", "nimble_lite_news", "nimble_standard",
     "parallel_turbo", "parallel_fast", "parallel_basic", "exa_instant", "exa_fast",
     "brave", "brave_llm", "you_highlights", "you_highlights_core", "perplexity_low", "tinyfish",
@@ -27,7 +29,7 @@ DEFAULT_ENDPOINTS = (
 
 
 def all_adapters() -> dict[str, ProviderAdapter]:
-    adapters = [*NIMBLE, *PARALLEL, *EXA, *BRAVE, *YOU, *PERPLEXITY, *TINYFISH, *FIRECRAWL,
+    adapters = [*CONTEXT, *NIMBLE, *PARALLEL, *EXA, *BRAVE, *YOU, *PERPLEXITY, *TINYFISH, *FIRECRAWL,
                 *PREDICTLEADS, *DATAHYENA, *AUTOBOUND, *SELTZ, *TAVILY, *SERP, *LINKUP]
     result = {adapter.name: adapter for adapter in adapters}
     if len(result) != len(adapters):
