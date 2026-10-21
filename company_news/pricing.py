@@ -1,8 +1,11 @@
 """Public list-price assumptions. Update the effective date with every change."""
 
-PRICE_EFFECTIVE_DATE = "2026-09-15"
+PRICE_EFFECTIVE_DATE = "2026-10-20"
 
 USD_PER_REQUEST = {
+    # Context Developer top-up: $2.20 / 1,000 credits; 2 credits / 10 results with Highlights.
+    # https://www.context.dev/pricing (2026-10-20)
+    "context": 0.0044,
     "nimble_lite": 0.0011,
     "nimble_lite_news": 0.0011,
     "nimble_standard": 0.005,
