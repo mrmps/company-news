@@ -25,7 +25,12 @@ def _build(case: Case):
     return (
         "POST", "https://api.context.dev/v1/web/search",
         {"Authorization": f"Bearer {os.environ['CONTEXT_API_KEY']}", "Content-Type": "application/json"},
-        {"query": case.question, "numResults": 10, "highlightsOptions": {"enabled": True, "maxCharacters": 8000}},
+        {
+            "query": case.question,
+            "numResults": 10,
+            "highlightsOptions": {"enabled": True, "maxCharacters": 8000},
+            "timeoutOpts": {"milliseconds": 3000, "behavior": "return-partial"},
+        },
         None, 90,
     )
 
